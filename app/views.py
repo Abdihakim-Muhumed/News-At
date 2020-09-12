@@ -1,12 +1,17 @@
 from flask import render_template
 from app import app
+from .request import get_sources
 
 @app.route('/')
 def index():
     '''
     View root page function that returns the index page.
+
     '''
-    return render_template('index.html')
+    sources = get_sources()
+    print(sources)
+    title = 'News At'
+    return render_template('index.html', sources = sources, title = title)
 
 @app.route('/source/<source_id>')
 

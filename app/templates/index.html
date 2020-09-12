@@ -1,9 +1,14 @@
+
+{%import 'macros.html' as macro %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>News At</title>
     </head>
     <body>
-        <h1>Welcome to News At</h1>
+        <h2>News Sources</h2>
+        <Ul>
+            {{macro.displaySources(sources)}}
+        </Ul>
     </body>
 </html>

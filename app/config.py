@@ -1,7 +1,7 @@
 class Config :
     '''General config parent class'''
-    source_api = 'https://newsapi.org/v2/sources?apiKey={}'
-    articles_api = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'
+    SOURCES_URL = 'https://newsapi.org/v2/sources?apiKey={}'
+    ARTICLES_URL = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'
 
 class ProdConfig(Config): 
     '''productio config  child class
@@ -17,4 +17,4 @@ class DevConfig(Config):
         Config: parent configurations class
         '''
 
-    debug = True
+    DEBUG = True
