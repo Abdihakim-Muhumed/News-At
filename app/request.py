@@ -46,3 +46,12 @@ def process_results(sources_list):
     
     return sources_results
 
+def get_source_articles(id):
+    '''function to get all articles from a source and create article objects
+        args:
+            id: id of the source of which its articles are to be gotten
+            
+        returns:
+            articles_results: a list of articles results
+    '''
+    
