@@ -1,6 +1,7 @@
 class Config :
-    '''config parent class'''
-    pass
+    '''General config parent class'''
+    source_api = 'https://newsapi.org/v2/sources?apiKey={}'
+    articles_api = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'
 
 class ProdConfig(Config): 
     '''productio config  child class
