@@ -13,8 +13,8 @@ def get_sources():
         returns:
             source_results : a list of dictionary containing Source objects
     '''
-    get_source_url = source_base_url.format(api_key)
-    with urllib.request.urlopen(get_source_url) as url:
+    get_sources_url = source_base_url.format(api_key)
+    with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
         get_sources_response = json.loads(get_sources_data)
 
