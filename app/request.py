@@ -66,15 +66,27 @@ def get_articles(id):
         if get_articles_response["articles"]:
             articles_results_lists = get_articles_response["articles"]
             articles_results = process_articles_results(articles_results_lists)
-def process_articles_results(articles):
-    ''' Function to process the results from get_articles function
-        args:
-            articles: alist of dictionaries returned by get_articles function
-        returns:
-            articles_list: a list of Article objects'''
-
         
     return articles_results
 
-        
+def process_articles_results(articles_list):
+    ''' Function to process the results from get_articles function
+        args:
+            articles_list: alist of dictionaries returned by get_articles function
+        returns:
+            articles_results: a list of Article objects'''        
+    
+    articles_results = []
+    for article in articles_list:
+        title = article.title
+        author = article.author
+        description = article.description
+        link = article.url
+        image_url = article.urlToImage
+
+        article_object = Article(title,author,description,link,image_url)
+        articles_results.append(article_object)
+
+    return articles_results
+
 
