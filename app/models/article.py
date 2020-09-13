@@ -1,6 +1,6 @@
 class Article:
     '''Article class to define article objects'''
-    all_articles[]
+    all_articles=[]
     def __init__(self,source,title,author,description,link,image_url):
         ''' __init__ method to create Article objects'''
         self.source = source
