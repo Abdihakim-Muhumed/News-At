@@ -79,12 +79,12 @@ def process_articles_results(articles_list):
     
     articles_results = []
     for article in articles_list:
-        title = article.title
-        author = article.author
-        description = article.description
-        link = article.url
-        image_url = article.urlToImage
-        published_time = article.publishedAt
+        title = article.get('title')
+        author = article.get('author')
+        description = article.get('description')
+        link = article.get('url')
+        image_url = article.get('urlToImage')
+        published_time = article.get('publishedAt')
         article_object = Article(title,author,description,link,image_url,published_time)
         articles_results.append(article_object)
 
