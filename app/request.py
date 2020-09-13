@@ -66,6 +66,12 @@ def get_articles(id):
         if get_articles_response["articles"]:
             articles_results_lists = get_articles_response["articles"]
             articles_results = process_articles_results(articles_results_lists)
+def process_articles_results(articles):
+    ''' Function to process the results from get_articles function
+        args:
+            articles: alist of dictionaries returned by get_articles function
+        returns:
+            articles_list: a list of Article objects'''
 
         
     return articles_results
