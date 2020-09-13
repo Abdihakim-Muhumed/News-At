@@ -29,19 +29,21 @@ class TestArticle(unittest.TestCase):
 
     def setUp(self):
         '''Testcase method that runs before every other testcase method'''
-        self.new_article = Article('Arsenal run riots','Soll Campell','Arsenal start off their Premeire league campaign with a comfortablewin against newly promoted side Fulham','www.skysport.com','skysport.com')
+        self.new_article = Article('Arsenal run riots','Soll Campell','Arsenal start off their Premeire league campaign with a comfortablewin against newly promoted side Fulham','www.skysport.com','skysport.com','2020-09-12T15:57:00Z')
     
     def test__init__(self):
         '''Testcase method to test if Article object is created correctly'''
-        article1= Article('Arsenal run riots','Soll Campell','Arsenal start off their Premeire league campaign with a comfortablewin against newly promoted side Fulham','www.skysport.com','skysport.com')
+        article1= Article('Arsenal run riots','Soll Campell','Arsenal start off their Premeire league campaign with a comfortablewin against newly promoted side Fulham','www.skysport.com','skysport.com','2020-09-12T15:57:00Z')
         self.assertEqual(article1.title,'Arsenal run riots')
         self.assertEqual(article1.author,'Soll Campell')
         self.assertEqual(article1.description,'Arsenal start off their Premeire league campaign with a comfortablewin against newly promoted side Fulham')
         self.assertEqual(article1.link,'www.skysport.com')
         self.assertEqual(article1.image_url,'skysport.com')
+        self.assertEqual(article1.published_time,'2020-09-12T15:57:00Z')
+
     def test_save_source(self):
         '''Testcase method to test Article if object is saved'''
-        article2= Article('Arsenal run riots','Soll Campell','Arsenal start off their Premeire league campaign with a comfortablewin against newly promoted side Fulham','www.skysport.com','skysport.com')
+        article2= Article('Arsenal run riots','Soll Campell','Arsenal start off their Premeire league campaign with a comfortablewin against newly promoted side Fulham','www.skysport.com','skysport.com','2020-09-12T15:57:00Z')
         article2.save_article()
         self.assertEqual(len(Article.all_articles),1)
 
