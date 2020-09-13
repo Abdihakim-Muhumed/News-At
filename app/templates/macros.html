@@ -3,3 +3,9 @@
         <li>{{source.name}}</li>
     {% endfor%}
 {% endmacro %}
+
+{% macro displayArticles(articles_lis)%}
+    {% for article in articles%}
+    <li>{{article.title}}</li>
+    {% endfor%}
+{% endmacro%}
