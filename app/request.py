@@ -1,7 +1,8 @@
 from app import app
 import urllib.request,json
-from .models import source
+from .models import source, article
 Source = source.Source
+Article = article.Article
 #getting the key
 api_key = app.config["MY_KEY"]
 
@@ -83,8 +84,8 @@ def process_articles_results(articles_list):
         description = article.description
         link = article.url
         image_url = article.urlToImage
-
-        article_object = Article(title,author,description,link,image_url)
+        published_time = article.publishedAt
+        article_object = Article(title,author,description,link,image_url,published_time)
         articles_results.append(article_object)
 
     return articles_results
