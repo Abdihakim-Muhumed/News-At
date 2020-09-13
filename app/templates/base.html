@@ -1,13 +1,13 @@
 
 {% extends 'bootstrap/base.html'%}
-<!DOCTYPE html>
-<head>
-    <title>News At</title>
-</head>
+<!DOCTYPE html>    
 <body>
+    <!--Navbar inclusion-->
+    {% block navbar%}
+        {% include 'navbar.html'%}
+    {% endblock%}
     <!--Content block-->
     {% block content%}
-
 
     {% endblock %}
 </body>
