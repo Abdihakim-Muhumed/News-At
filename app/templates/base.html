@@ -1,17 +1,24 @@
 
 {% extends 'bootstrap/base.html'%}
-<!DOCTYPE html>    
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-</head>
-<body>
-    <!--Navbar inclusion-->
-    {% block navbar%}
-        {% include 'navbar.html'%}
-    {% endblock%}
-    <!--Content block-->
-    {% block content%}
+<!DOCTYPE html> 
 
-    {% endblock %}
-</body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
+    <body>
+        <!--Navbar inclusion-->
+        {% block navbar%}
+            {% include 'navbar.html'%}
+        {% endblock%}
+        <!--Content block-->
+        {% block content%}
+    
+        {% endblock %}
+        <!--FOOTER BLOCK-->
+        {% block footer%}
+            {% include 'footer.html'%}
+        {% endblock%}
+    </body>
+</html>

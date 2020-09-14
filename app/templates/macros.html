@@ -8,9 +8,36 @@
         </div>
     {% endfor%}
 {% endmacro %}
+<div class="row">
 
+</div>
 {% macro displayArticles(articles_list)%}
     {% for article in articles_list %}
-    <li>{{article.title}}</li>
+    <div class="col-md-4">
+        <div class="card" style="margin: 3%;">
+            <div class="card-header" style="color: brown;">
+                {{article.title}}
+            </div>
+            <div class="card-body">
+                <img src="{{article.image_url }}" alt="{{ article.title}}" class="img-fluid">
+                <div class="text-center">
+                    <p>
+                        {{article.description|truncate(100)}}</p>
+                        <a href="{{article.link}}">...Read more</a>
+                </div>                    
+            </div>            
+        </div>
+
+    </div>
     {% endfor%}
-{% endmacro%}
+    {% endmacro%}
+
+
+
+
+
+
+
+
+
+

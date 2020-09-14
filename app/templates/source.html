@@ -3,5 +3,11 @@
 
 <!--Content block-->
 {% block content%}
-    <ul>{{macro.displayArticles(articles)}}</ul>
+    <div class="container-fluid">
+        <div class="row">
+            {{macro.displayArticles(articles)}}
+            <ul></ul>
+        </div>
+    </div>
+    
 {% endblock%}
