@@ -11,24 +11,17 @@
 {% endmacro %}
 {% macro displayHeadlines(headlines_list)%}
     {%for headline in headlines_list%}
-        <div class="col-md-6">
-            <div class="card" style="margin: 3%;">
-                <div class="card-header" style="color: brown;">
-                    {{headline.title}}
-                </div>
-                <div class="card-body">
-                    <img src="{{headline.image_url}}" alt="{{ headline.title}}" class="img-fluid">
-                    <div class="text-center">
-                        <p>
-                            {{headline.description}}</p>
-                        <p style="color: black;">
-                            <a href="{{headline.link}}" style="color: blue;">...Read more</a>
-                                Posted o:{{headline.published_time}}
-                        </p>
-                    </div>                    
-                </div>            
-            </div>
-        </div>
+    <div class="card" style="margin: 3%;">
+        <img src="{{headline.image_url}}" alt="{{ headline.title}}" class="img-fluid">
+            <div class="text-center">
+                <p>
+                    {{headline.title}}</p>
+                <p style="color: black;">
+                    <a href="{{headline.link}}" style="color: blue;">...Read more</a>
+                        Posted on:{{headline.published_time}}
+                </p>
+            </div>                    
+    </div>
     {% endfor%}
 {% endmacro%}
 {% macro displayArticles(articles_list)%}
@@ -42,7 +35,7 @@
                 <img src="{{article.image_url }}" alt="{{ article.title}}" class="img-fluid">
                 <div class="text-center">
                     <p>
-                        {{article.description|truncate(100)}}</p>
+                        {{article.description|truncate(75)}}</p>
                     <p style="color: black;">
                         <a href="{{article.link}}" style="color: blue;">...Read more</a>
                         Posted on:{{article.published_time}}
