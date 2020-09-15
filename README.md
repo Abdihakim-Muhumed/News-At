@@ -6,7 +6,7 @@ The project is meant to build a news web application. The application will allow
 
 # Setup Instructions:
 
-Click this link to launch the app: https://git.heroku.com/the-news-at.git
+Click this link to launch the app: https://the-news-at.herokuapp.com/
 
 # Technologies
  1.Python
