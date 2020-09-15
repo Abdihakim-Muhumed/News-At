@@ -1,12 +1,29 @@
 {% extends 'base.html'%}
 {%import 'macros.html' as macro %}
+
+<!-- Styles block -->
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+
 <!-- content block -->
 {% block content %}
-        
-        <div class="container">
-            <h3>We bring various news sources around the globe to you</h3>
-            <Ul>
-                {{macro.displaySources(sources)}}
-            </Ul>
+        <div class="container" id="landing">
+            <div class="card">
+                <div class="card-header bg-dark">
+                    <h3>We bring various news sources around the globe to you</h3>
+                </div>
+                <div class="card-body ">
+                    <div class="row">
+                        <Ul>
+                            {{macro.displaySources(sources)}}
+                        </Ul>
+                    </div>
+                </div>
+            </div>
+            <div class="bg"> <img src="" alt="landing-page-photo" class="img-fluid"></div>
+            
         </div>
 {% endblock%}

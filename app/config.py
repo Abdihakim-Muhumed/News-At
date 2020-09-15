@@ -2,6 +2,7 @@ class Config :
     '''General config parent class'''
     SOURCES_URL = 'https://newsapi.org/v2/sources?apiKey={}'
     ARTICLES_URL = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'
+    HEADLINES_URL = 'http://newsapi.org/v2/top-headlines?category=general&apiKey={}'
 
 class ProdConfig(Config): 
     '''productio config  child class
