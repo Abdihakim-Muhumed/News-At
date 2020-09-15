@@ -10,7 +10,7 @@
     {% endfor%}
 {% endmacro %}
 {% macro displayHeadlines(headlines_list)%}
-        {%for headline in headlines_list%}
+    {%for headline in headlines_list%}
         <div class="col-md-6">
             <div class="card" style="margin: 3%;">
                 <div class="card-header" style="color: brown;">
@@ -21,12 +21,15 @@
                     <div class="text-center">
                         <p>
                             {{headline.description}}</p>
-                            <a href="{{headline.link}}">...Read more</a>
+                        <p style="color: black;">
+                            <a href="{{headline.link}}" style="color: blue;">...Read more</a>
+                                Posted o:{{headline.published_time}}
+                        </p>
                     </div>                    
                 </div>            
             </div>
         </div>
-        {% endfor%}
+    {% endfor%}
 {% endmacro%}
 {% macro displayArticles(articles_list)%}
     {% for article in articles_list %}
@@ -40,7 +43,10 @@
                 <div class="text-center">
                     <p>
                         {{article.description|truncate(100)}}</p>
-                        <a href="{{article.link}}">...Read more</a>
+                    <p style="color: black;">
+                        <a href="{{article.link}}" style="color: blue;">...Read more</a>
+                        Posted on:{{headline.published_time}}
+                    </p>                       
                 </div>                    
             </div>            
         </div>

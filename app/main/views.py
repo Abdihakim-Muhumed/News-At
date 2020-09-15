@@ -1,8 +1,9 @@
 from flask import render_template
-from app import app
-from .request import get_sources,get_articles,get_headlines
+from . import main
+from ..request import get_sources,get_articles,get_headlines
+from ..models import Source, Article
 
-@app.route('/')
+@main.route('/')
 def index():
     '''
     View root page function that returns the index page.
@@ -14,7 +15,7 @@ def index():
     print(headlines)
     return render_template('index.html', sources = sources,headlines = headlines)
 
-@app.route('/source/<source_id>')
+@main.route('/source/<source_id>')
 def source(source_id):
     '''function that displays all the articles of a source in source.html'''
     articles = get_articles(source_id)

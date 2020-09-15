@@ -1,8 +1,5 @@
 import unittest
-from models import source
-from models import article
-
-Source = source.Source
+from app.models import Source, Article
 
 class TestSource(unittest.TestCase):
     ''' class to test the behaviour of Source class'''
@@ -47,6 +44,3 @@ class TestArticle(unittest.TestCase):
         article2.save_article()
         self.assertEqual(len(Article.all_articles),1)
 
-
-    if __name__ == '__main__':
-        unittest.main()
