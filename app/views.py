@@ -11,6 +11,7 @@ def index():
     sources = get_sources()
     headlines = get_headlines()
     print(sources)
+    print(headlines)
     return render_template('index.html', sources = sources,headlines = headlines)
 
 @app.route('/source/<source_id>')

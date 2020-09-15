@@ -1,16 +1,33 @@
 {% macro displaySources(sources_list)%}
     {%for source in sources_list%}
         <div class="col-md-4">
-            <li class="text-center">
+            <p class="text-center">
                 <a href="/source/{{source.id}}">
-                    {{source.name}}</a>
-            </li>
+                    {{source.name}}
+                </a>
+            </p>
         </div>
     {% endfor%}
 {% endmacro %}
-<div class="row">
-
-</div>
+{% macro displayHeadlines(headlines_list)%}
+        {%for headline in headlines_list%}
+        <div class="col-md-6">
+            <div class="card" style="margin: 3%;">
+                <div class="card-header" style="color: brown;">
+                    {{headline.title}}
+                </div>
+                <div class="card-body">
+                    <img src="{{headline.image_url}}" alt="{{ headline.title}}" class="img-fluid">
+                    <div class="text-center">
+                        <p>
+                            {{headline.description}}</p>
+                            <a href="{{headline.link}}">...Read more</a>
+                    </div>                    
+                </div>            
+            </div>
+        </div>
+        {% endfor%}
+{% endmacro%}
 {% macro displayArticles(articles_list)%}
     {% for article in articles_list %}
     <div class="col-md-4">
@@ -30,7 +47,7 @@
 
     </div>
     {% endfor%}
-    {% endmacro%}
+{% endmacro%}
 
 
 

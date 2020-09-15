@@ -10,20 +10,24 @@
 
 <!-- content block -->
 {% block content %}
-        <div class="container" id="landing">
-            <div class="card">
-                <div class="card-header bg-dark">
-                    <h3>We bring various news sources around the globe to you</h3>
-                </div>
-                <div class="card-body ">
-                    <div class="row">
-                        <Ul>
-                            {{macro.displaySources(sources)}}
-                        </Ul>
-                    </div>
+    <div class="container" id="landing">
+        <h3>We bring various news sources around the globe to you</h3>
+        <div class="card">
+            <div class="card-header bg-dark">
+                <h2 class="header" style="color: whitesmoke; align-content: center;">TOP HEADLINEs</h2>
+            </div>
+            <div class="card-body ">
+                <div class="row">
+                    {{macro.displayHeadlines(headlines)}}
                 </div>
             </div>
-            <div class="bg"> <img src="" alt="landing-page-photo" class="img-fluid"></div>
-            
         </div>
+    </div>
+    <div class="jumbotron">
+        <div class="header bg-dark text-center" style="color: whitesmoke;"><h2>TOP SOURCES</h2></div>
+        <hr>
+        <div class="row">
+            {{macro.displaySources(sources)}}
+        </div>
+    </div>
 {% endblock%}

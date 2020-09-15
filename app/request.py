@@ -37,7 +37,7 @@ def process_sources_results(sources_list):
             sources_results: list of Source objects
     '''
     sources_results = []
-
+    counter = 0
     for source in sources_list:
         id = source.get('id')
         name = source.get('name')
@@ -46,7 +46,10 @@ def process_sources_results(sources_list):
         source_object = Source(id,name,description)
         sources_results.append(source_object)
 
-    
+        counter +=1
+        if counter == 15:
+            break
+
     return sources_results
 
 def get_articles(id):
@@ -75,13 +78,12 @@ def get_articles(id):
 def get_headlines():
     '''function to get top headlines 
         returns:
-            headlines_resultd:a list of top articles
+            headlines_results:a list of top articles
         '''
     get_headlines_url = headlines_base_url.format(api_key)
     with urllib.request.urlopen(get_headlines_url) as url:
         get_headlines_data = url.read()
         get_headlines_response = json.loads(get_headlines_data)
-
 
         headlines_results = None
 
@@ -110,7 +112,7 @@ def process_headlines_results(headlines_list):
         article_object = Article(title,author,description,link,image_url,published_time)
         articles_results.append(article_object)
         counter +=1
-        if counter == 5:
+        if counter == 4:
             break 
 
     return articles_results
