@@ -10,10 +10,10 @@ class Article:
         self.image_url = image_url
         self.published_time = published_time
 
-@classmethod
-def save_article(cls,self):
-    '''Article class method that saves an article into the all_articles list'''
-    cls.all_articles.append(self)
+    @classmethod
+    def save_article(cls,self):
+        '''Article class method that saves an article into the all_articles list'''
+        cls.all_articles.append(self)
 
 
 
